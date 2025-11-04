@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GOZZO - Premium Home Decor, Vases & More</title>
+  <meta name="description" content="Elevate your space with stylish home decor, elegant vases, and unique accessories. Explore a curated collection designed to inspire every home. Shop now at GOZZO!">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+  
+  <meta property="og:title" content="GOZZO - Elevate Your Home with Elegant Decor">
+  <meta property="og:description" content="Discover stylish home decor, premium vases, and more at GOZZO. Transform your space with our unique collections.">
+  <meta property="og:image" content="/assets/images/logo.png">
+  <meta name="author" content="GOZZO">
+  <meta name="theme-color" content="#211c84">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  
+  <link rel="canonical" href="https://GOZZO-store.web.app">
+  <meta name="rating" content="general">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+ 
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="loader-container">
+    <div class="loader"></div>
+  </div>
+  <header>
+    <div class="header">
+      <div class="logo col-5">
+        <img src="assets/images/logo.png" alt="Logo">
+        <h4>GOZZO</h4>
+      </div>
+      <div class="header-content-mobile">
+        <div class="login-container">
+          <div class="login"></div>
+          <div class="profile-tooltip">
+            <i class="bi bi-x prof_icon"></i>
+            <b class="profile_name"></b>
+            <button class="btn btn-outline-danger" data-bs-target="#logoutModal" data-bs-toggle="modal">Logout</button>
+          </div>
+        </div>
+        <i class="cart"></i>
+        <i class="bi bi-three-dots-vertical nav"></i>
+      </div>
+      <div class="header-content-pc">
+        <div class="searchBox">
+          <input class="search-pc" type="search" name="search" placeholder="Search for products..">
+          <button class="searchButton">
+            <img src="assets/images/search.svg" alt="search icon">
+          </button>
+          <div class="search-suggestions"></div>
+        </div>
+        <div class="login-container">
+          <button class="login"></button>
+          <div class="profile-tooltip">
+            <i class="bi bi-x prof_icon"></i>
+            <b class="profile_name"></b>
+            <button class="btn btn-outline-danger" data-bs-target="#logoutModal" data-bs-toggle="modal">Logout</button>
+          </div>
+        </div>
+        <i class="cart"></i>
+        <i class="bi bi-three-dots-vertical nav"></i>
+      </div>
+    </div>
+  </header>
+  <div class="auth-alert animate__animated animate__shakeX">
+    <i class="bi bi-x-lg"></i>
+    <h2> Authentication Alert!</h2>
+    <p>You may need to sign up to enjoy a full and seamless experience.</p>
+    <div class="buttons">
+      <button class="signup">Signup</button>
+      <button class="guest">Continue as Guest</button>
+    </div>
+  </div>
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logoutModalLabel">Confirm Log Out</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> Are you sure you want to Log out? </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger logoutBtn" id="confirmLogout">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="mob-searchBar">
+    <div class="group">
+      <svg class="icon" fill="blue" aria-hidden="true" viewBox="0 0 24 24">
+        <g>
+          <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+        </g>
+      </svg>
+      <input type="search" class="search_mobile">
+      <div class="placeholder">Search products...</div>
+    </div>
+    <div class="search-suggestions"></div>
+  </section>
+  <aside>
+    <a href="cart/cart.html" class=" d-flex align-items-center">
+      <i class="bi bi-cart me-2"></i> My Cart </a>
+    <a href="nav/wishlist.html" class=" d-flex align-items-center">
+      <i class="bi bi-heart me-2"></i> Wishlist </a>
+    <a href="nav/my-orders.html" class=" d-flex align-items-center">
+      <i class="bi bi-truck me-2"></i> Track Order </a>
+    <a href="nav/customer-support.html" class=" d-flex align-items-center">
+      <i class="bi bi-headset me-2"></i> Customer Support </a>
+    <a href="nav/account_settings.html" class=" d-flex align-items-center">
+      <i class="bi bi-person me-2"></i> Account Settings </a>
+    <a href="nav/faq.html" class=" d-flex align-items-center">
+      <i class="bi bi-info-circle me-2"></i> FAQs </a>
+    <a href="nav/terms&conditions.html" class="d-flex align-items-center">
+      <i class="bi bi-arrow-counterclockwise me-2"></i> Terms & Conditions </a>
+  </aside>
+  <main>
+    <div class="custom-carousel-container">
+      <div class="custom-carousel" id="custom-carousel">
+        <img data-code="3506" class="custom-carousel-item" src="assets/images/carousel1.png" alt="carousel image 1">
+        <img data-code="P069" class="custom-carousel-item" src="assets/images/carousel2.png" alt="carousel image 2">
+        <img data-code="3502" class="custom-carousel-item" src="assets/images/carousel3.png" alt="carousel image 3">
+        <img data-code="P063" class="custom-carousel-item" src="assets/images/carousel4.png" alt="carousel image 4">
+        <img data-code="3559" class="custom-carousel-item" src="assets/images/carousel5.png" alt="carousel image 5">
+      </div>
+      <button class="custom-prev" onclick="moveSlide(-1)">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button class="custom-next" onclick="moveSlide(1)">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <div class="custom-indicators" id="custom-indicators"></div>
+    </div>
+    <section class="catogory">
+      <div class="category-grid">
+        <!-- pass now for basic href, because fewer products -->
+      </div>
+      <hr>
+    </section>
+    <section>
+      <div class="scroll-container">
+        <div class="scroll-item" data-path="gardening">
+          <img src="assets/images/garden.png" alt="Gardening">
+          <b>Gardening</b>
+        </div>
+        <div class="scroll-item" data-path="Home Decor">
+          <img src="assets/images/decor.png" alt="Home Decor">
+          <b>Home Decor</b>
+        </div>
+        <div class="scroll-item" data-path="Vase">
+          <img src="assets/images/vase.png" alt="Vases">
+          <b>Vases</b>
+        </div>
+      </div>
+    </section>
+    <div class="prod-viewAll">
+      <a href="products/prod_list.html" class="prod-viewAll-link">
+        <div class="prod-viewAll-content">
+          <span class="prod-viewAll-text">View all products</span>
+          <i class="bi bi-chevron-right"></i>
+        </div>
+      </a>
+    </div>
+    <section class="featured-brand">
+      <h2>Featured Brand</h2>
+      <img class="featured" data-code="P069" src="assets/images/featured.png" alt="Featured brand">
+    </section>
+    <section class="discount-sec"></section>
+    <h1 class="top-picks-h1">Top Picks</h1>
+    <section id="top-picks"></section>
+    <footer class="footer-20192">
+      <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <a href="#" class="footer-logo">GOZZO</a>
+              <p class="copyright">
+                <small>&copy; 2025</small>
+              </p>
+            </div>
+            <div class="col-sm">
+              <h3>Support</h3>
+              <ul class="list-unstyled links">
+                <li>
+                  <a href="nav/customer-support.html" target="_blank">Customer Support</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h3>Company</h3>
+              <ul class="list-unstyled links">
+                <li>
+                  <a href="nav/terms&conditions.html#introduction">About us</a>
+                </li>
+                <li>
+                  <a href="products/prod_list.html">Products</a>
+                </li>
+                <li>
+                  <a href="mailto: GOZZOspprt@gmail.com">Contact us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h3>Further Information</h3>
+              <ul class="list-unstyled links">
+                <li>
+                  <a href="nav/terms&conditions.html">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h3>Follow us</h3>
+              <ul class="list-unstyled social">
+                <li>
+                  <a href="mailto: GOZZOspprt@gmail.com">
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/918606564151" target="_blank">
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+<script src="loadBootstrap.js"></script>
+  <script defer="" src="carousel.js"></script>
+  <script defer src="home-fetch.js"></script>
+  <script defer type="module" src="/main.js"></script>
+</body>
+
+</html>

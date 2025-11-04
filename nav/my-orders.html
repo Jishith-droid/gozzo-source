@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="my-orders.css" type="text/css" media="all">
+  <title>My Orders - Track & Manage Your Purchases | GOZZO</title>
+  <meta name="description" content="View your order history, track deliveries, and manage returns or cancellations. Stay updated on your purchases with GOZZO.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <meta property="og:title" content="GOZZO - Elevate Your Home with Elegant Decor">
+  <meta property="og:description" content="Discover stylish home decor, premium vases, and more at GOZZO. Transform your space with our unique collections.">
+  <meta property="og:image" content="/assets/images/logo.png">
+  <meta name="author" content="GOZZO">
+  <meta name="theme-color" content="#211c84">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="canonical" href="https://GOZZO-store.web.app">
+  <meta name="rating" content="general">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+</head>
+
+<body>
+  
+  <div id="loader-container">
+    <div class="loader"></div>
+  </div>
+  
+  <header class="header">
+    
+    <div class="left-header">
+      <i class="bi bi-arrow-left"></i>
+      <img src="../assets/images/logo.png" alt="logo">
+      <b>Order Details</b>
+    </div>
+    
+    <div class="right-header">
+      <i class="cart"></i>
+      
+      <div class="login-container">
+        
+        <button class="login"></button>
+        
+        <div class="profile-tooltip">
+          <i class="bi bi-x prof_icon"></i>
+          <b class="profile_name"></b>
+          <button class="btn btn-outline-danger" data-bs-target="#logoutModal" data-bs-toggle="modal">Logout</button>
+        </div>
+        
+      </div>
+      
+    </div>
+  </header>
+  
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logoutModalLabel">Confirm Log Out</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to Log out?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger logoutBtn" id="confirmLogout">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- From Uiverse.io by alexruix -->
+  <div class="group">
+    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+      <g>
+        <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+      </g>
+    </svg>
+    <input placeholder="Search" type="search" class="input">
+    <div id="searchResults" style="width: 95%; margin: 20px auto; display: none;"></div>
+  </div>
+  
+  <div class="order-section"></div>
+  
+<script src="/loadBootstrap.js"></script>  
+  <script type="module" src="my-orders.js"></script>
+  
+  
+</body>
+
+</html>

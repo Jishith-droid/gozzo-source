@@ -1,0 +1,145 @@
+
+#receiptDiv {
+padding: 15px;
+width: 800px;
+height: 1200px;
+box-sizing: border-box;
+margin: auto;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+overflow: hidden;
+background-color: #f5f5f5;
+font-family: "Roboto", sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+.receipt-header {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+margin-bottom: 10px;
+margin-top: 35px;
+}
+.receipt-title {
+font-size: 22px;
+font-weight: 900;
+}
+.company-info {
+display: flex;
+align-items: center;
+gap: 4px;
+}
+.company-name {
+font-size: 20px;
+font-weight: 900;
+}
+.company-logo {
+width: 40px;
+height: 40px;
+}
+.company-logo img {
+width: 100%;
+height: auto;
+object-fit: contain;
+}
+.nameAndLogo {
+display: flex;
+justify-content: center;
+align-items: center;
+white-space: nowrap;
+}
+.receipt-order {
+margin-bottom: 8px;
+}
+.receipt-order span {
+color: grey;
+}
+.receipt-order h2 {
+text-decoration: underline;
+margin-bottom: 5px;
+}
+.receipt-description {
+margin-top: 10px;
+padding: 10px;
+background-color: #eaeaea;
+border-radius: 8px;
+}
+.receipt-description div {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 0;
+}
+.receipt-description .description {
+width: 50%;
+text-align: left;
+padding-left: 10px;
+}
+.receipt-description .pricing {
+width: 50%;
+display: flex;
+justify-content: flex-end;
+padding-right: 10px;
+}
+.receipt-description .pricing span {
+width: 33%;
+text-align: right;
+}
+.total-summary {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+margin-top: 20px;
+font-size: 18px;
+font-weight: bold;
+}
+.total-summary small {
+font-size: 12px;
+color: grey;
+}
+.receipt-policy {
+text-align: center;
+margin-top: 10px;
+font-size: 14px;
+}
+.receipt-policy b {
+color: red;
+}
+.info {
+display: flex;
+gap: 3px;
+justify-content: space-between;
+}
+.receipt-footer {
+text-align: center;
+margin-top: 10px;
+font-size: 12px;
+color: gray;
+}
+.dateAndAddress {
+display: flex;
+justify-content: flex-start;
+flex-direction: column;
+align-items: center;
+}
+.dateAndAddress b {
+margin: 10px 0;
+}
+.dateAndAddress address {
+color: grey;
+margin: 5px 0;
+}
+@media (max-width: 800px) {
+.receipt-header {
+flex-direction: space-between;
+align-items: center;
+}
+.company-info {
+flex-direction: row-reverse;
+}
+.total-summary {
+flex-direction: space-evenly;
+align-items: center;
+}
+}

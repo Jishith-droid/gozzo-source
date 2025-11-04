@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Login to GOZZO - Secure & Fast Access to Your Account</title>
+  <meta name="description" content="Sign in to your  account to track orders, save addresses, and enjoy a seamless shopping experience. Fast, secure, and hassle-free login.">
+  <meta name="author" content="GOZZO">
+  <meta name="rating" content="general">
+  <meta name="theme-color" content="#211c84">
+  <link rel="canonical" href="https://GOZZO-store.web.app">
+  
+  <meta property="og:title" content="GOZZO - Elevate Your Home with Elegant Decor">
+  <meta property="og:description" content="Discover stylish home decor, premium vases, and more at GOZZO. Transform your space with our unique collections.">
+  <meta property="og:image" content="/assets/images/logo.png">
+  
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/web-app-manifest-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  
+  <div id="loader-container">
+    <div class="loader"></div>
+  </div>
+  
+  <header>
+    <i onclick="window.location.href='/index.html'" class="bi bi-arrow-left">
+    </i>
+    <img src="/assets/images/logo.png" alt="Logo" />
+    <div class="head">
+      <h2>GOZZO</h2>
+    </div>
+  </header>
+  
+  <main>
+    <div class="auth-container">
+      <h1 class="heading">Welcome Back</h1>
+      <p class="intro-text">Authenticate for a better experience, so we can keep you updated with your orders and more.</p>
+      
+      <button class="login-with-google-btn" type="submit">Continue with Google</button>
+      
+      <div class="or"></div>
+      
+      <form id="login_form" class="auth-form">
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email">
+        </div>
+        
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8" maxlength="20" autocomplete="password">
+        </div>
+        
+        <!-- Forgot Password Link -->
+        <a class="forgot-password-link" href="#" style="align-self: flex-end; margin: 10px 0;">Forgot Password?</a>
+        
+        <!-- Login Button -->
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+      
+      <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+      
+      <p class="resend_verification">Verification link expired?<span class="verification">Resend Verification Link</span></p>
+      
+      <p class="terms-links">
+        By logging in, you agree to our <a href="/nav/terms&conditions.html">Terms of Use</a> and <a href="/nav/terms&conditions.html#privacy">Privacy Policy</a>.
+      </p>
+    </div>
+    <div class="pc-left">
+      <h3>Fast, Easy & Secure Shopping</h3>
+      <div class="signinAnimation"></div>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script src="/loadBootstrap.js"></script>
+  <script type="module" src="login.js"></script>
+  
+</body>
+
+</html>

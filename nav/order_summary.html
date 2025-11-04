@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#211c84">
+  <meta name="rating" content="general">
+  <meta name="author" content="GOZZO">
+  <meta name="referrer" content="no-referrer">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="description" content="Check your order details, applied discounts, and estimated delivery time. Ensure everything is correct before proceeding with payment.">
+  
+  <meta property="og:title" content="GOZZO - Elevate Your Home with Elegant Decor">
+  <meta property="og:description" content="Discover stylish home decor, premium vases, and more at GOZZO. Transform your space with our unique collections.">
+  <meta property="og:image" content="/assets/images/logo.png">
+  
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  
+  <link rel="canonical" href="https://GOZZO-store.web.app">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  
+  <!-- PNG Favicons -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  
+  <!-- Apple Touch Icon (for iOS) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  
+  <!-- Android Chrome Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/web-app-manifest-512x512.png">
+  
+  <!-- SVG Favicon (Optional) -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  
+  <title>Order Summary - Review Your Purchase Details | GOZZO</title>
+  
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  
+  <link rel="stylesheet" href="order_summary.css" type="text/css" media="all">
+  <link rel="stylesheet" href="receipt.css" type="text/css" />
+</head>
+
+<body>
+  
+  <div id="loader-container">
+    <div class="loader"></div>
+  </div>
+  
+  <header class="header">
+  <div class="left-header">
+    <i class="bi bi-arrow-left"></i>
+    <img src="../assets/images/logo.png" alt="Logo">
+    <p>Checkout</p>
+  </div>
+</header>
+
+<div class="step-prgs">
+  <div class="line"></div>
+  <div id="step-progress-bar">
+    <div class="step">
+      <div class="circle circle1">
+        <span class="step-number">1</span>
+      </div>
+      <div class="step-text">Address</div>
+    </div>
+    <div class="step">
+      <div class="circle circle2">
+        <span class="step-number">2</span>
+      </div>
+      <div class="step-text">Order Summary</div>
+    </div>
+    <div class="step">
+      <div class="circle circle3">
+        <span class="step-number">3</span>
+      </div>
+      <div class="step-text">Payment</div>
+    </div>
+  </div>
+</div>
+
+<!-- Address container -->
+<div class="address-container">
+  <form id="addressForm">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" name="fullName" id="fullName" required maxlength="30" placeholder="Enter your full name">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" name="phoneNumber" id="phoneNumber" required maxlength="10" minlength="10" placeholder="Enter your phone number">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="altPhoneNumber" class="form-label">Alternative Phone Number (Optional)</label>
+        <input type="tel" class="form-control" name="altPhoneNumber" id="altPhoneNumber" maxlength="10" minlength="10" placeholder="Enter an alternative phone number (if any)">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="pincode" class="form-label">Pincode</label>
+        <input type="text" class="form-control" name="pincode" id="pincode" required placeholder="Enter your pincode">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="addressTextarea" class="form-label">Street Address</label>
+        <textarea class="form-control" name="addressTextarea" id="addressTextarea" rows="4" required maxlength="50" placeholder="Enter your street address"></textarea>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="landmark" class="form-label">Landmark (Optional)</label>
+        <input type="text" class="form-control" name="landmark" id="landmark" placeholder="Enter a landmark (if any)">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="city" class="form-label">City</label>
+        <input type="text" class="form-control" name="city" id="city" required placeholder="Enter your city">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="state" class="form-label">State</label>
+        <select name="state" class="form-control" id="state" required>
+          <option value="" disabled selected>Select your state</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+        </select>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save Address</button>
+  </form>
+</div>
+
+<!-- Summary container -->
+<div class="summary-container">
+  <section class="delivered-to-container"></section>
+
+  <div class="prodAndInvoice">
+    <section id="ordered-product-container"></section>
+    <section class="invoice"></section>
+  </div>
+
+  <section class="summary-continue-container">
+    <div class="continue-order">
+      <div class="place-left">
+        <s class="dis-amt"></s>
+        <h6 class="finTotal"></h6>
+      </div>
+      <button class="summary-confirm-btn btn btn-transparent">Continue</button>
+    </div>
+  </section>
+</div>
+
+<!-- Payment container -->
+<div class="payment-container">
+  <section>
+    <div class="payment-header">
+      <div class="left-header">
+        <div>
+          <p>Step 3 of 3</p>
+          <strong>Payments</strong>
+        </div>
+      </div>
+      <div class="right-header">
+        <i class="bi bi-lock"></i>
+        <b>100% Secure</b>
+      </div>
+    </div>
+
+    <div class="total">
+      <div>
+        <p>Total Amount</p>
+      </div>
+      <div>
+        <b id="totalDivAmt"></b>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Select a Payment Method</h3>
+    <div class="accordion" id="paymentAccordion">
+      <!-- Cash on Delivery -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="codHeading">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#codCollapse"
+            aria-expanded="false" aria-controls="codCollapse">
+            <i class="bi bi-cash-coin me-2"></i>Cash on Delivery
+          </button>
+        </h2>
+        <div id="codCollapse" aria-labelledby="codHeading" data-bs-parent="#paymentAccordion" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <p>Pay cash when your order is delivered to your doorstep.</p>
+            <div class="text-end">
+              <button id="placeOrderCOD" class="placeOrderBtn">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Payment -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="onlineHeading">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onlineCollapse"
+            aria-expanded="false" aria-controls="onlineCollapse">
+            <i class="bi bi-credit-card me-2"></i>Online Payment
+          </button>
+        </h2>
+        <div id="onlineCollapse" class="accordion-collapse collapse show" aria-labelledby="onlineHeading"
+          data-bs-parent="#paymentAccordion">
+          <div class="accordion-body">
+            <p>Use your debit card, credit card, or UPI for secure online payments.</p>
+            <div class="text-end">
+              <button id="placeOrderOnline" class="placeOrderBtn">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secure">
+    <i class="bi bi-shield-shaded"></i>
+    <h3>Shop with Confidence | Secure Payments & Verified Products</h3>
+    <p>Enjoy a seamless shopping experience with our secure payment system. All products are 100% verified to ensure quality and authenticity, giving you peace of mind with every purchase.</p>
+    <p><strong>Note:</strong> You must be 18 years or older to make a purchase. By proceeding, you agree to our <a href="/nav/terms&conditions.html">Terms and Conditions</a> and <a href="/nav/terms&conditions.html#privacy">Privacy Policy</a>.</p>
+  </section>
+</div>
+
+<script src="/loadBootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script type="module" src="order_summary.js"></script>
+</body>
+
+</html>

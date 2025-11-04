@@ -1,0 +1,134 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+padding: 0;
+margin: 0;
+background-color: white;
+width: 100%;
+height: 100vh;
+overflow-y: hidden;
+font-family: "Roboto", sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+:root {
+--primary-color: #211c84;
+--secondary-color: #4d55cc;
+--accent-color: #7a73d1;
+}
+header {
+width: 100%;
+height: 55px;
+background-color: white;
+padding: 10px;
+box-sizing: border-box;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+}
+header i {
+position: absolute;
+left: 10px;
+font-size: 23px;
+cursor: pointer;
+}
+header div {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+header .img {
+width: 30px;
+height: 30px;
+margin-right: 10px;
+object-fit: contain;
+}
+header h3 {
+margin: 0;
+}
+main {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: calc(100vh - 55px);
+background-color: var(--accent-color);
+border-radius: 30px;
+}
+section {
+background-color: white;
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 89%;
+height: auto;
+padding: 20px;
+box-sizing: border-box;
+text-align: center;
+}
+.order-box {
+background-color: floralwhite;
+padding: 20px;
+width: 70%;
+border-radius: 10px;
+position: relative;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.clipboard-icon {
+position: absolute;
+top: 10px;
+right: 10px;
+cursor: pointer;
+font-size: 20px;
+}
+.order-id {
+font-size: 0.9rem;
+font-weight: 600;
+text-align: center;
+}
+footer {
+margin-top: 40px;
+}
+.footer-links {
+text-align: center;
+}
+.footer-links a,
+.footer-links p{
+text-decoration: none;
+color: green;
+font-size: 12px;
+}
+.footer-links a:hover {
+text-decoration: underline;
+}
+#bottone1 {
+padding-left: 33px;
+padding-right: 33px;
+padding-bottom: 16px;
+padding-top: 16px;
+border-radius: 9px;
+background: var(--primary-color);
+border: none;
+color: white;
+font-family: inherit;
+text-align: center;
+cursor: pointer;
+transition: 0.4s;
+margin: 25px 0;
+}
+#bottone1 span {
+font-weight: bold;
+}
+#bottone1:hover {
+box-shadow: 7px 5px 56px -14px var(--secondary-color);
+}
+#bottone1:active {
+transform: scale(0.97);
+box-shadow: 7px 5px 56px -10px var(--primary-color);
+}
+iframe {
+border: none;
+}

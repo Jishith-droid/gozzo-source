@@ -1,0 +1,22 @@
+{
+  "name": "PotItUp",
+  "short_name": "PotItUp",
+  "icons": [
+    {
+      "src": "/assets/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "theme_color": "#7a73d1",
+  "background_color": "#211c84",
+  "display": "standalone",
+  "start_url": "/"
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="Get the best deal on [Product Name] with fast delivery and secure payment options. Add to cart or buy now for a seamless shopping experience.">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+
+  <meta property="og:title" content="GOZZO - Elevate Your Home with Elegant Decor">
+  <meta property="og:description" content="Discover stylish home decor, premium vases, and more at GOZZO. Transform your space with our unique collections.">
+  <meta property="og:image" content="/assets/images/logo.png">
+  <meta name="author" content="GOZZO">
+  <meta name="theme-color" content="#211c84">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+  <link rel="canonical" href="https://GOZZO-store.web.app">
+  <meta name="rating" content="general">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  
+  <link rel="stylesheet" href="prod_view.css" type="text/css" media="all">
+</head>
+
+<body>
+  <div id="loader-container">
+    <div class="loader"></div>
+  </div>
+
+  <header class="header">
+
+    <div class="left-header">
+      <i class="bi bi-arrow-left"></i>
+      <img src="../assets/images/logo.png" alt="logo">
+    </div>
+
+    <div class="right-header">
+      <i class="cart cartbtn"></i>
+
+      <div class="login-container">
+
+        <button class="login"></button>
+
+        <div class="profile-tooltip">
+          <i class="bi bi-x prof_icon"></i>
+          <b class="profile_name"></b>
+          <button class="btn btn-outline-danger" data-bs-target="#logoutModal" data-bs-toggle="modal">Logout</button>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+  
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logoutModalLabel">Confirm Log Out</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to Log out?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger logoutBtn" id="confirmLogout">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="product-info"></div>
+<!-- Delivery Info -->
+<div class="offcanvas offcanvas-top" tabindex="-1" id="deliveryInfo">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-truck"></i> Delivery Information</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Estimated delivery date: <strong>Varies by location</strong></p>
+    <p><span class="text-warning">Note:</span> Delivery dates are estimated and not guaranteed.</p>
+    <p>We strive to ensure timely delivery; however, delays may occur due to unforeseen circumstances such as weather conditions, logistical issues, or high demand.</p>
+    <p>Tracking details will be provided once your order is shipped.</p>
+    <p>In case of delivery issues, please contact our support team.</p>
+  </div>
+</div>
+
+<!-- Return Policy -->
+<div class="offcanvas offcanvas-top" tabindex="-1" id="returnPolicy">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-arrow-return-left"></i> Return Policy</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p><span class="text-danger">No return available for this product.</span></p>
+    <p>All sales are final unless the item is damaged or incorrect.</p>
+  </div>
+</div>
+
+<!-- Cash on Delivery Info -->
+<div class="offcanvas offcanvas-top" tabindex="-1" id="codInfo">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-cash-coin"></i> Cash on Delivery</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Cash on delivery (COD) is available for eligible products.</p>
+    <p><span class="text-warning">Additional COD charges may apply.</span></p>
+    <p>Customers must have exact change ready at the time of delivery.</p>
+  </div>
+</div>
+
+<!-- Refund Info -->
+<div class="offcanvas offcanvas-top" tabindex="-1" id="refundInfo">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-arrow-counterclockwise"></i> Refund Policy</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Refunds are only available if the order is canceled within <strong>24 hours</strong> of placement.</p>
+    <p><span class="text-danger">Note:</span> Delivery and platform fees are non-refundable.</p>
+    <p>If your refund request meets the criteria, the amount will be credited to your original payment method within 5-7 business days.</p>
+  </div>
+</div>
+
+<!-- Replacement Policy -->
+<div class="offcanvas offcanvas-top" tabindex="-1" data-bs-backdrop="true" id="replacementInfo">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-cart-x"></i> Replacement Policy</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p><span class="text-danger">No replacement available for this product.</span></p>
+    <p>Please review product details carefully before purchase.</p>
+  </div>
+</div>
+<script src="/loadBootstrap.js"></script>
+  <script type="module" src="prod_view.js"></script>
+
+</body>
+
+</html>

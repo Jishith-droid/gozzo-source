@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop the Best Deals - Explore Our Product Collection | GOZZO</title>
+  <meta name="description" content="Discover a wide range of top-quality products at unbeatable prices. Browse categories and find the perfect items for you on GOZZO.">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  
+  <meta property="og:title" content="GOZZO - Elevate Your Home with Elegant Decor">
+  <meta property="og:description" content="Discover stylish home decor, premium vases, and more at GOZZO. Transform your space with our unique collections.">
+  <meta property="og:image" content="/assets/images/logo.png">
+  <meta name="author" content="GOZZO">
+  <meta name="theme-color" content="#211c84">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+  <link rel="canonical" href="https://GOZZO-store.web.app">
+  <meta name="rating" content="general">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  <link rel="stylesheet" href="prod_list.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <header class="header">
+      <div class="left-header">
+        <i class="bi bi-arrow-left"></i>
+        <img src="../assets/images/logo.png" alt="logo">
+        <div id="product-search-name"></div>
+      </div>
+
+      <div class="right-header">
+        <i class="cart"></i>
+
+        <div class="login-container">
+
+          <button class="login"></button>
+
+          <div class="profile-tooltip">
+            <i class="bi bi-x prof_icon"></i>
+            <b class="profile_name"></b>
+            <button class="btn btn-outline-danger" data-bs-target="#logoutModal" data-bs-toggle="modal">Logout</button>
+          </div>
+
+        </div>
+
+      </div>
+    </header>
+
+    <section class="mob-searchBar">
+      <div class="group">
+        <svg width="30" height="30" class="icon" aria-hidden="true" viewBox="0 0 24 24">
+          <g>
+            <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+          </g>
+        </svg>
+
+        <input id="searchBar" type="search" class="search_mobile">
+        <div class="placeholder">Search products..</div>
+      </div>
+     <div id="search-suggestions"></div>
+    </section>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoutModalLabel">Confirm Log Out</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to Log out?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger logoutBtn" id="confirmLogout">Log Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sort_filter">
+      <div class="sort" data-bs-toggle="modal" data-bs-target="#sortBox">
+        <i class="bi bi-funnel"></i>
+        <b>Sort</b>
+      </div>
+
+      <div class="vertical-line"></div>
+
+      <div class="filter" data-bs-target="#filterModal" data-bs-toggle="modal">
+        <i class="bi bi-sliders"></i>
+        <b>Filter</b>
+      </div>
+    </div>
+
+    <section class="product-display"></section>
+
+<div id="sortBox" class="sort-by-mobile modal fade" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title">Sort By</p>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="sort-by-grid">
+          <div class="sort-by-option">
+            <label for="relevance">Relevance</label>
+            <input type="radio" name="sort-by" id="relevance" value="relevance">
+          </div>
+          <div class="sort-by-option">
+            <label for="popularity">Popularity</label>
+            <input type="radio" name="sort-by" id="popularity" value="popularity">
+          </div>
+          <div class="sort-by-option">
+            <label for="price--low-to-high">Price--Low to High</label>
+            <input type="radio" name="sort-by" id="price--low-to-high" value="price--low-to-high">
+          </div>
+          <div class="sort-by-option">
+            <label for="price--high-to-low">Price--High to Low</label>
+            <input type="radio" name="sort-by" id="price--high-to-low" value="price--high-to-low">
+          </div>
+          <div class="sort-by-option">
+            <label for="newest-first">Newest First</label>
+            <input type="radio" name="sort-by" id="newest-first" value="newest-first">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter Container (Full-Screen Modal-like) -->
+<div class="filter-by-mobile modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <!-- Filter Content -->
+      <div class="filter-header">
+        <i class="bi bi-arrow-left" data-bs-dismiss="modal" aria-label="Close"></i>
+        <span>Filters</span>
+      </div>
+
+      <div class="filter-grid">
+        <!-- Filter Items -->
+        <div class="filter-items">
+          <a data-target="price" href="#">Price</a>
+          <a data-target="size" href="#">Size</a>
+          <a data-target="availability" href="#">Availability</a>
+          <a data-target="discount" href="#">Discount</a>
+          <a data-target="color" href="#">Color</a>
+        </div>
+
+        <!-- Filter Values -->
+        <div class="filter-value">
+          <div class="price">
+            <div>
+              <input type="checkbox" name="below199" id="below-one-ninety-nine">
+              <label for="below-one-ninety-nine">Below 199</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="below399" id="below-three-hundred-ninety-nine">
+              <label for="below-three-hundred-ninety-nine">Below 399</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="below499" id="below-four-hundred-ninety-nine">
+              <label for="below-four-hundred-ninety-nine">Below 499</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="below999" id="below-nine-hundred-ninety-nine">
+              <label for="below-nine-hundred-ninety-nine">Below 999</label>
+            </div>
+          </div>
+
+          <!-- Size Filter -->
+          <div class="size">
+            <div>
+              <input type="checkbox" name="size-small" id="size-small">
+              <label for="size-small">Small</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="size-medium" id="size-medium">
+              <label for="size-medium">Medium</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="size-large" id="size-large">
+              <label for="size-large">Large</label>
+            </div>
+          </div>
+
+          <!-- Availability Filter -->
+          <div class="availability">
+            <div>
+              <input type="checkbox" name="in-stock" id="in-stock">
+              <label for="in-stock">In Stock</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="out-of-stock" id="out-of-stock">
+              <label for="out-of-stock">Out of Stock</label>
+            </div>
+          </div>
+
+          <!-- Discount Filter -->
+          <div class="discount">
+            <div>
+              <input type="checkbox" name="discount-20" id="discount-20">
+              <label for="discount-20">20%</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="discount-30" id="discount-30">
+              <label for="discount-30">30%</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="discount-50" id="discount-50">
+              <label for="discount-50">50%</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="discount-70" id="discount-70">
+              <label for="discount-70">70%</label>
+            </div>
+          </div>
+
+          <!-- Color Filter -->
+          <div class="color">
+            <div>
+              <input type="checkbox" name="color-red" id="color-red">
+              <label for="color-red">Red</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="color-blue" id="color-blue">
+              <label for="color-blue">Blue</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="color-green" id="color-green">
+              <label for="color-green">Green</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="color-black" id="color-black">
+              <label for="color-black">Black</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="color-white" id="color-white">
+              <label for="color-white">White</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="color-yellow" id="color-yellow">
+              <label for="color-yellow">Yellow</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="color-orange" id="color-orange">
+              <label for="color-orange">Orange</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="color-purple" id="color-purple">
+              <label for="color-purple">Purple</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-footer">
+        <div class="filter-footer-left">
+          <b id="products-found-no"></b>
+          <p>products found <br> <span id="products-found"></span></p>
+        </div>
+        <div class="filter-footer-right">
+          <a id="reset-filter" href="#">Reset Filter</a>
+          <button id="filter-apply" class="btn btn-primary">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+ <script src="/loadBootstrap.js"></script>
+  <script type="module" src="prod_list.js"></script>
+</body>
+
+</html>

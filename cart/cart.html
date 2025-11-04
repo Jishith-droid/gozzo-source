@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart - Review & Proceed to Checkout | GOZZO</title>
+  <meta name="description" content="View your selected products, check discounts, and proceed to secure checkout. Your cart is saved for a hassle-free shopping experience at GOZZO.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  
+  <meta property="og:title" content="GOZZO - Elevate Your Home with Elegant Decor">
+  <meta property="og:description" content="Discover stylish home decor, premium vases, and more at GOZZO. Transform your space with our unique collections.">
+  <meta property="og:image" content="/assets/images/logo.png">
+  <meta name="author" content="GOZZO">
+  <meta name="theme-color" content="#211c84">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="canonical" href="https://GOZZO-store.web.app">
+  <meta name="rating" content="general">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+  
+  <!-- delete cart modal -->
+  <div class="modal fade" id="deleteCartItemModal" tabindex="-1" aria-labelledby="deleteCartItemLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteCartItemLabel">Confirm Deletion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to remove this item from your cart?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="loader-container">
+    <div class="loader"></div>
+  </div>
+  
+  <header class="header">
+    <div class="left-header">
+      <i class="bi bi-arrow-left"></i>
+      <img src="../assets/images/logo.png" alt="logo">
+      <p>My Cart</p>
+    </div>
+  </header>
+  
+  <div id="addressContainer"></div>
+  <div class="notFoundAnimation"></div>
+  <div class="prodAndSummary">
+    
+    <div class="product-cart" id="product-cart"></div>
+    <div id="cart-summary"></div>
+  </div>
+  <div id="cart-placeOrder">
+    <div class="place-left">
+      <s id="dis-amt"></s>
+      <h6 id="finTotal"></h6>
+    </div>
+    <button id="placeOrder" class="btn btn-transparent-bg placeOrder-Btn">Place Order</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script src="/loadBootstrap.js"></script>
+  <script type="module" src="cart.js"></script>
+  
+</body>
+
+</html>
